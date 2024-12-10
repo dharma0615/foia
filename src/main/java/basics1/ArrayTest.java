@@ -1,9 +1,15 @@
 package basics1;
 
+import java.util.Arrays;
+
 public class ArrayTest {
 
 	public static void main(String[] args) {
+		
+		new ArrayTest("Dharma");
 		// TODO Auto-generated method stub
+		
+		
 
 		int i[] = new int[2];
 		i[0] = 10;
@@ -37,6 +43,31 @@ public class ArrayTest {
 		for (int num1 : mergeArray) {
 			System.out.println("numbers: "+num1);
 		}
+		
+		arrayCopy();
+	}
+	
+	 private ArrayTest() {
+		
+	}
+	 
+	 private ArrayTest(String name) {
+			System.out.println(name);
+		}
+	
+	public static void arrayCopy() {
+		int i[]= {10, 20, 30};
+		int[] j=new int[] {40,50};
+		
+		int[] m=new int[i.length+j.length];
+		System.arraycopy(i, 0, m, 0,i.length );
+		System.arraycopy(j, 0, m, i.length, j.length);
+		System.out.println(Arrays.toString(m));
+		for(int k:m) {
+			System.out.println(k);
+		}
+		
+		
 	}
 
 }
